@@ -39,26 +39,34 @@ const MediaRail: React.FC<MediaRailProps> = ({ title, tracks, onPlay }) => {
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div 
-                className="aspect-square w-full overflow-hidden bg-gray-900 border border-white/10 relative mb-4"
-                onClick={() => onPlay(track)}
-              >
-                <img 
-                  src={track.cover} 
-                  alt={track.title} 
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Play size={40} className="text-alrecz-paper drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" fill="currentColor" />
-                </div>
-                
-                {/* Category Tag */}
-                <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-1 text-[10px] font-mono border border-white/20 text-gray-300">
-                  {track.category}
-                </div>
-              </div>
+            <div
+  className="aspect-square w-full overflow-hidden bg-gray-900 border border-white/10 relative mb-4 group cursor-pointer">
+  {/* IMAGE */}
+  <img
+    src={track.cover}
+    alt={track.title}
+    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+  />
+
+  {/* DARK HOVER OVERLAY (BOTTOM INFO STYLE) */}
+  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+    <div>
+      <p className="text-xs text-alrecz-blood">PLAY NOW</p>
+      <p className="text-sm text-white">{track.title}</p>
+    </div>
+  </div>
+
+  {/* CLICK AREA */}
+  <button
+    onClick={() => onPlay(track)}
+    className="absolute inset-0"
+  />
+
+  {/* CATEGORY TAG */}
+  <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-1 text-[10px] font-mono border border-white/20 text-gray-300">
+    {track.category}
+  </div>
+</div>
 
               <div className="flex justify-between items-start">
                 <div>

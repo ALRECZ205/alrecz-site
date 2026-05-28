@@ -12,17 +12,17 @@ export const TRACKS: Track[] = [
   },
   {
     id: "2",
-    title: "Chrome Heart",
-    artist: "I$H feat. AL",
+    title: "Chrome Heart Chri$t",
+    artist: "I$H",
     cover:
-      "https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=500&auto=format&fit=crop",
+      "/images/CHC Cover.jpg",
     duration: "2:15",
-    category: "BEAT",
+    category: "SINGLE",
   },
   {
     id: "3",
     title: "Night Terror Mix",
-    artist: "DJ GHOST",
+    artist: "I$H",
     cover:
       "https://images.unsplash.com/photo-1594623930572-300a3011d9ae?q=80&w=500&auto=format&fit=crop",
     duration: "45:00",
@@ -39,26 +39,26 @@ export const TRACKS: Track[] = [
   },
   {
     id: "5",
-    title: "Chopped Soul",
-    artist: "PURPLE DRANK",
+    title: "Chopped 205",
+    artist: "I$H",
     cover:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=500&auto=format&fit=crop",
-    duration: "4:20",
+    duration: "30:00",
     category: "C&S",
   },
   {
     id: "6",
-    title: "Lost Frequency",
-    artist: "VOID",
+    title: "Lost Boyz 14",
+    artist: "LostBoyz",
     cover:
-      "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=500&auto=format&fit=crop",
-    duration: "2:58",
+      "/images/Lost-Boyz-14.png",
+    duration: "25:00",
     category: "RADIO",
   },
   {
     id: "7",
-    title: "Heavy Metal Lung",
-    artist: "RUST",
+    title: "Carrhart Chri$t",
+    artist: "I$H",
     cover:
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=500&auto=format&fit=crop",
     duration: "3:33",

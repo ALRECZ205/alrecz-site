@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ShoppingCart, Play } from 'lucide-react';
 
 import CRTOverlay from './components/CRTOverlay';
@@ -11,9 +11,14 @@ import Link from 'next/link';
 import type { MediaItem, Product, ViewState } from './types';
 
 const DUMMY_PRODUCTS: Product[] = [
-  { id: '1', name: 'AWGE TRUCKER HAT', price: 45, image: 'https://picsum.photos/200/200?random=1', inStock: true },
-  { id: '2', name: 'TESTING TEE', price: 60, image: 'https://picsum.photos/200/200?random=2', inStock: true },
-  { id: '3', name: 'VHS ARCHIVE BOX', price: 120, image: 'https://picsum.photos/200/200?random=3', inStock: false },
+  {
+    id: '1',
+    name: 'SHIRT .001 (GENESIS)',
+    price: 60,
+    image: '/images/shirt-poster.jpg',
+    video: '/video/shirt-rotation.mp4',
+    inStock: true,
+  },
 ];
 
 const DUMMY_MEDIA: MediaItem[] = [
@@ -31,14 +36,17 @@ export default function MainApp() {
   const [cart, setCart] = useState<Product[]>([]);
   const [currentTime, setCurrentTime] = useState(new Date());
 
+  
+const shirtVideoRef = useRef<HTMLVideoElement | null>(null);
+
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2500);
     const clock = setInterval(() => setCurrentTime(new Date()), 1000);
 
-    return () => {
-      clearTimeout(timer);
-      clearInterval(clock);
-    };
+ return () => {
+  clearTimeout(timer);
+  clearInterval(clock);
+};
   }, []);
 
   const addToCart = (product: Product) => {
@@ -49,6 +57,16 @@ export default function MainApp() {
   const removeFromCart = (productId: string) => {
     setCart((prev) => prev.filter((p) => p.id !== productId));
   };
+const toggleShirtRotation = () => {
+  const video = shirtVideoRef.current;
+  if (!video) return;
+
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+};
 
   // Preloader Screen
 if (loading || !entered) {
@@ -417,40 +435,85 @@ if (loading || !entered) {
         )}
 
         {view === 'SHOP' && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {DUMMY_PRODUCTS.map((product) => (
-              <div key={product.id} className="group border border-white/20 p-4 hover:bg-white/5 transition-all">
-                <div className="aspect-square bg-gray-900 mb-4 overflow-hidden relative">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
-                  {!product.inStock && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/70">
-                      <span className="text-red-500 font-bold border-2 border-red-500 px-4 py-2 -rotate-12">SOLD OUT</span>
-                    </div>
-                  )}
-                </div>
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-bold max-w-[70%]">{product.name}</h3>
-                  <span className="text-awge-yellow">${product.price}</span>
-                </div>
-                <button
-                  onClick={() => product.inStock && addToCart(product)}
-                  disabled={!product.inStock}
-                  className={`w-full py-2 font-bold text-sm uppercase transition-all
-                    ${product.inStock
-                      ? 'bg-white text-black hover:bg-awge-yellow hover:translate-x-1 hover:translate-y-1'
-                      : 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                    }`}
-                >
-                  {product.inStock ? 'Add to Cart' : 'Out of Stock'}
-                </button>
-              </div>
-            ))}
+  <section
+  className="relative min-h-[calc(100vh-90px)] overflow-hidden border border-white/10 cursor-pointer"
+  onClick={toggleShirtRotation}
+>
+<video
+  ref={shirtVideoRef}
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  poster="/images/shirt-poster.jpg"
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/video/shirt-rotation.mp4" type="video/mp4" />
+</video>
+
+    <div className="absolute inset-0 bg-black/35" />
+
+    {/* TOP BRAND TEXT */}
+    <div className="absolute top-10 left-8 md:left-16 z-10">
+      <h1 className="font-retro text-5xl md:text-8xl text-white tracking-widest">
+        ALRECZ
+      </h1>
+      <p className="text-xs md:text-sm text-white/60 tracking-[0.4em] mt-2">
+        LAW OF THE JUNGLE
+      </p>
+    </div>
+
+    {/* SIDE PRODUCT COPY */}
+    <div className="absolute right-8 md:right-20 top-1/2 -translate-y-1/2 z-10 max-w-xs">
+      <h2 className="font-retro text-4xl md:text-6xl leading-none text-white mb-6">
+        SHIRT .001
+        <br />
+        GENESIS
+      </h2>
+
+      <p className="font-mono text-xs md:text-sm text-white/80 leading-relaxed">
+        A DIGITAL GARMENT BUILT FROM STATIC, SIGNAL, FROM A SOUTHERN MYTH.
+        DESIGNED FOR THE ARCHIVE. RELEASED FOR THE REAL WORLD.
+      </p>
+
+      <div className="mt-8 text-xs font-mono text-white/50 space-y-2">
+        <p>DROP // 001</p>
+        <p>COLOR // COKE WHITE</p>
+        <p>STATUS // LIMITED</p>
+        <p>NODE // 205</p>
+      </div>
+    </div>
+
+    {/* BOTTOM PRODUCT BAR */}
+    <div className="absolute bottom-12 left-8 md:left-16 right-8 md:right-16 z-10">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <p className="text-xs text-white/50 tracking-[0.3em] mb-2">
+            ALRECZ://PRODUCT_DROP_001
+          </p>
+          <h3 className="font-retro text-4xl md:text-6xl text-white">
+            LIMITLESS TEE
+          </h3>
+        </div>
+
+        <div className="md:w-[420px]">
+          <div className="flex justify-between mb-3 font-mono">
+            <span className="text-white/70">$60</span>
+            <span className="text-awge-yellow">IN STOCK</span>
           </div>
-        )}
+
+          <button
+            onClick={() => addToCart(DUMMY_PRODUCTS[0])}
+            className="w-full py-4 bg-white text-black font-bold text-sm uppercase hover:bg-awge-yellow transition-all"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
       </main>
 
       <footer className="fixed bottom-0 left-0 w-full z-40 border-t border-white/20 bg-black/90 backdrop-blur-sm p-2 flex justify-between items-center text-[10px] md:text-xs">

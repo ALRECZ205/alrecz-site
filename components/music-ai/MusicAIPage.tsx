@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from "react";
@@ -32,8 +33,23 @@ export default function MusicAIPage() {
       ? TRACKS
       : TRACKS.filter((t) => t.category === activeFilter);
 
+  const recentTransmissionTracks = TRACKS.filter(
+    (t) =>
+      t.category === "SINGLE" ||
+      t.category === "MIX" ||
+      t.category === "BEAT" ||
+      t.category === "C&S" ||
+      t.category === "RADIO"
+  );
+
+  const radioTracks = TRACKS.filter((t) => t.category === "RADIO");
+  const mixTracks = TRACKS.filter((t) => t.category === "MIX");
+
   return (
     <div className="relative min-h-screen bg-alrecz-black text-alrecz-paper font-mono selection:bg-alrecz-blood selection:text-white">
+      
+      <CRTOverlay />
+      
       {/* HEADER / NAV */}
       <nav className="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center mix-blend-difference">
         <div className="font-grotesk font-bold text-2xl tracking-tighter">ALRECZ</div>
@@ -53,16 +69,19 @@ export default function MusicAIPage() {
           onChange={setActiveFilter}
         />
 
-        <FeaturedRelease track={TRACKS[0]} onPlay={handlePlay} />
+        <FeaturedRelease
+          track={filteredTracks[0] || TRACKS[0]}
+          onPlay={handlePlay}
+        />
 
         <MediaRail
           title="Recent Transmissions"
-          tracks={TRACKS.filter((t) => t.category === "SINGLE" || t.category === "BEAT")}
+          tracks={recentTransmissionTracks}
           onPlay={handlePlay}
         />
 
         <RadioSection
-          tracks={TRACKS}
+          tracks={radioTracks}
           currentTrackId={currentTrack?.id}
           onPlay={handlePlay}
         />
@@ -73,13 +92,15 @@ export default function MusicAIPage() {
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TRACKS.filter((t) => t.category === "MIX").map((track) => (
+            {mixTracks.map((track) => (
               <div
                 key={track.id}
                 className="group border border-white/10 bg-[#080808] p-4 hover:border-alrecz-blood/50 transition-all"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-gray-500">{track.date || "2025"}</span>
+                  <span className="font-mono text-xs text-gray-500">
+                    {track.date || "2025"}
+                  </span>
                   <span className="font-mono text-xs text-alrecz-blood border border-alrecz-blood px-1">
                     MIX
                   </span>
