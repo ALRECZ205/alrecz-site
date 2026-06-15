@@ -29,10 +29,10 @@ export default function About() {
           >
             <div className="absolute inset-0 bg-brand-red/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500" />
             <div className="absolute inset-0 dither-pattern opacity-30 mix-blend-overlay z-10" />
-            <img 
-              src="https://IMDESIGN.com/wp-content/uploads/2026/02/BH.webp" 
-              alt="Pelatiah Morgan" 
-              className="w-full h-auto grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700" 
+           <img
+            src="/images/about/me01.jpg"
+            alt="Pelatiah Morgan"
+            className="w-full h-auto grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700"
             />
             <div className="absolute bottom-4 right-4 z-20 bg-brand-black/80 border border-brand-red px-3 py-1 text-[10px] font-mono text-brand-red uppercase tracking-widest backdrop-blur-sm">
               REC // 00:00:00

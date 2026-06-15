@@ -6,9 +6,9 @@ import { Plus, Minus } from 'lucide-react';
 
 const experiences = [
   {
-    company: 'JumpFactor',
+    company: 'MCYI',
     role: 'Creative Director',
-    location: 'Toronto, ON',
+    location: 'Birmingham, AL',
     date: 'May 2025 – March 2026',
     desc: 'Partnered with executive leadership to define brand purpose, reposition the organization, and elevate creative strategy as a core business driver.',
     bullets: [
@@ -21,9 +21,9 @@ const experiences = [
     ]
   },
   {
-    company: 'FutureCraft',
+    company: 'THE KICKBACK',
     role: 'Creative Director / Partner',
-    location: 'Hamilton, ON',
+    location: 'Bitmingham, AL',
     date: 'Jan 2023 – Present',
     desc: 'Co-founded and scaled a boutique brand consultancy focused on clarity, differentiation, and sustainable growth for founders and leadership teams.',
     bullets: [
@@ -35,9 +35,24 @@ const experiences = [
     ]
   },
   {
-    company: 'Muse Marketing Group',
+    company: 'Alabama Records',
     role: 'Founding Partner & Creative Director',
-    location: 'Hamilton, ON',
+    location: 'Birmingham, AL',
+    date: '2015 – 2023',
+    desc: 'Helped grow and shape a boutique agency into a nationally recognized firm through brand leadership, systems thinking, and high-impact creative execution.',
+    bullets: [
+      'Partnered in scaling the agency from a founding team of 3 to a multidisciplinary team of 12, supporting operational growth, process maturity, and creative output.',
+      'Contributed to national recognition as a Top Marketing Agency in Canada (Clutch, 2020) and Best Local Advertising Agency for three consecutive years.',
+      'Led the agency’s internal rebrand and positioning, strengthening market perception and supporting accelerated growth.',
+      'Built, managed, and mentored multidisciplinary teams across design, photography, development, copywriting, SEO, and brand strategy.',
+      'Directed over 80 website launches and numerous brand engagements, overseeing work from executive discovery through launch and post-launch evolution.',
+      'Designed and implemented proprietary discovery workshops and long-term client partnership programs that elevated work quality, improved retention, and increased recurring revenue.'
+    ]
+  },
+  {
+    company: 'LOSTBOYZ MUSIC COLLECTIVE',
+    role: 'Founding Partner & Creative Director',
+    location: 'Birmingham, AL',
     date: '2015 – 2023',
     desc: 'Helped grow and shape a boutique agency into a nationally recognized firm through brand leadership, systems thinking, and high-impact creative execution.',
     bullets: [
@@ -65,7 +80,7 @@ export default function Experience() {
           </div>
           <div className="flex items-end">
             <h3 className="text-2xl md:text-4xl font-medium uppercase tracking-tight leading-tight text-white/80">
-              Work Experience spanning 15+ years of Creativity, Imagination, and Passion.
+              Work Experience spanning 10+ years of Creativity, Imagination, and Passion.
             </h3>
           </div>
         </div>

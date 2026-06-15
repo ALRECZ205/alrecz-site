@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 py-16 border-t border-b border-brand-red/20 mb-12">
-          <Clock city="Toronto" timeZone="America/Toronto" />
+          <Clock city="Birmingham, AL" timeZone="America/Chicago" />
           <Clock city="Tokyo" timeZone="Asia/Tokyo" />
           <Clock city="London" timeZone="Europe/London" />
           <Clock city="Paris" timeZone="Europe/Paris" />
@@ -64,8 +64,8 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-mono opacity-50 uppercase tracking-[0.2em]">
           <div className="flex gap-8">
-            <a href="#" className="hover:text-brand-red transition-colors">LINKEDIN</a>
-            <a href="#" className="hover:text-brand-red transition-colors">GITHUB</a>
+            <a href="#" className="hover:text-brand-red transition-colors">INSTGRAM</a>
+            <a href="#" className="hover:text-brand-red transition-colors">TKB</a>
           </div>
           <p>SYS.ADMIN © {new Date().getFullYear()} // DESIGN BY PELATIAH</p>
         </div>

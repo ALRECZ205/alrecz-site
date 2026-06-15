@@ -8,31 +8,31 @@ import SplitText from './SplitText';
 const clientCategories = [
   {
     title: 'Arts, Entertainment & Venues',
-    clients: ['97 South Song Sessions', 'Desert Star Estate', 'Lauzon Music', 'Liz Long', 'Ottawa Black Bears', 'Paranormal Tours', 'Reid Flocking', 'Steady Canoe Studio', 'Telling Tales Festival', 'The Cotton Factory', 'Tim Hawkes Music']
+    clients: ['World Police & Fire Games 2025', 'Coca-Cola', 'Redbull', 'Monster Energy', 'Mattel', 'Workplay', '3000 Bar', 'ZYDECO', 'Daves Pub', 'Saturn Birmingham', 'Freedom House', 'Woodlawn Theatre', 'Firehouse Avondale', 'Upstairs At Avondale', 'Contiental Drift']
   },
   {
     title: 'Legal & Professional',
-    clients: ['ACT (Advanced Consulting & Training)', 'Baumen Associates Limited', 'Brown Lawyers', 'Corporate Protection Group', 'Dataforge', 'DMC LLP', 'DST Advisory Group', 'Elby Professional Recruitment', 'Financial Planet', 'Findlay Law', 'Findlay Personal Injury Lawyers', 'InRoads Insurance', 'Kulark (Law)', 'Eyko', 'MacKinnon Law Associates', 'Manifestology', 'Mayfield Mathers (Law)', 'Proma Management Inc.', 'Reybroek Law', 'RossMcbride', 'Scarfone Hawkins LLP', 'Smithen Family Law', 'The Design Squire', 'White Oak Transport Ltd.', 'William Adams (Law)']
+    clients: ['City of Birmingham', 'City of Bessemer', 'Halo Dental', 'Adams Dental', 'Dataforge', 'Reality Link', 'DST Advisory Group', 'Rebirth Marketing & Consulting', 'Gulf South Holdings', 'Signature Brand Management', 'Sophia',]
   },
   {
     title: 'Construction, Trades & Auto',
-    clients: ['Altra Construction Rentals', 'Armada Construction', 'Beech Motorworks', 'Catlin Contracting', 'Cicala Homes', 'Deckton', 'Eastside Auto', 'Nelson Water', 'Titan Demolition', 'Valcor Construction']
+    clients: ['Altec', 'CraneWorks', 'Brookstone Restoration', 'Crusher Works', 'DJ Construction', 'EMCOR Services', 'Grenergy', 'Max Tool, INC.', 'McWaye Plant & Industrial', 'Valcor Construction', 'Ace Tree Services', 'Robins & Morton', 'Sprayroq', 'Steel City Industrial', 'SUNOCO' ]
   },
   {
     title: 'Manufacturing & Logistics',
-    clients: ['Adventec Manufacturing Inc.', 'Air Separation Technologies Inc.', 'Allegro Freight', 'AML Crating', 'CFT Storage', 'IceCo Advanced Arena Products', 'Intuitive Water Systems', 'Soper’s Engineered Fabric Solutions', 'Vinyl Trends']
+    clients: ['Bulldog Logistics', 'EBSCO Industries', 'UPS', 'Fed-x', 'MOHR', 'Polaris Inc.', 'Pyne Rock', 'Rather Recycling', 'Vinyl Trends', 'SA Recycling', 'Sain Engineering', 'Satellites Unlimited', 'Steel City Tap']
   },
   {
     title: 'Healthcare & Wellness',
-    clients: ['100x Mobile Vet', 'Dental Place', 'Dentist Lawyers', 'Denturist Association of Ontario', 'Dr Wendy Low (Dentistry)', 'Eden Exotics', 'Elysian', 'Paws & Claws', 'St. Joseph’s Healthcare Hamilton', 'St. Joseph’s Health System', 'Treat Hearing, Health, Care', 'Zee Float']
+    clients: ['24/7 Fitness', 'Midfield Animal Hospital', 'Natures Food Store', 'Near To Me CBD', 'Canna-Bliss', 'Cannabama', 'P4 Physical Therapy', 'Panther Nutrition', 'Pelham Eye Center', 'UAB Hospital', 'Perfect Body Laser and Wellness', 'Sanctuary Gym']
   },
   {
     title: 'Tech, Gaming & Agency',
-    clients: ['Airwhistle Media', 'Cloud Secure Tech', 'Digital 21', 'Enedym', 'FutureCraft', 'Geotab', 'Glitch Energy', 'Human Code / Imagination Plus', 'Innosys Power', 'JumpFactor', 'Muse Marketing Group', 'nVision', 'P3T Lab', 'Quilen', 'Soil Health', 'The Legend of Haven', 'Veritas Branding', 'WebMarketers', 'Zenith VR']
+    clients: ['ITAC Solutions', 'Cloud Secure Tech', 'Digital 21', 'TraiVision', 'FutureCraft', 'ARECZ', 'Visual Marking Systems', 'Vision Security Technologies', 'Ryecroft Creative', 'Muse Marketing Group', 'nVision', 'P3T Lab', 'Quilen', 'Soil Health', 'The Legend of Haven', 'Veritas Branding', 'WebMarketers', 'Zenith VR']
   },
   {
     title: 'Education, Public & Food',
-    clients: ['Acces Employment', 'Automotive Policy Research Centre', 'Beech Consulting', 'Bullivant & Associates', 'Dundas Valley School of Art', 'Flour Child Bakery', 'Hamilton Literacy Council', 'Modern Training Ontario', 'Oakville Meals on Wheels', 'Ottawa Meal Prep', 'PIVOT Tech Conference', 'Sensity Deafblind Network', 'ShopPros']
+    clients: ['Birmingham Youth YMCA', 'MCYI', 'Red Diamond', 'UAB HCOP Program', 'UAB', 'Birmingham Public Library', 'Homewood Middle School', 'Alabama Schoole of Fine Arts', 'Birmingham Southern College', 'Exotic Wings & Things', 'City Bowls', 'Hokes Bluff Public Library', '5 Star Cutz']
   }
 ];
 

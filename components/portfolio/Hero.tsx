@@ -19,7 +19,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 brightness-75"
         >
           <source
-            src="https://designbybrandin.com/wp-content/uploads/2026/02/Hero.mp4"
+            src="/video/hero.mp4"
             type="video/mp4"
           />
         </video>
@@ -75,7 +75,7 @@ export default function Hero() {
           className="md:text-right flex flex-col gap-1"
         >
           <span className="text-white/50">EXP //</span>
-          <span>15+ Years</span>
+          <span>10+ Years</span>
         </motion.div>
       </div>
     </section>

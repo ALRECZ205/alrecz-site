@@ -5,9 +5,10 @@ import SplitText from './SplitText';
 
 export default function Awards() {
   const awards = [
-    { agency: 'Muse Marketing Group', org: 'Clutch', award: 'Top Marketing Agency in Canada', year: '2020' },
-    { agency: 'Muse Marketing Group', org: 'Hamilton Spectator', award: 'Best Local Advertising Agency (Platinum)', year: '2015–2016' },
-    { agency: 'Muse Marketing Group', org: 'Hamilton Spectator', award: 'Best Video Services (Platinum)', year: '2016' }
+    { agency: 'Jasmine Hills', org: 'American Advertising Awards (ADDY)', award: 'Top Marketing Design (Gold)', year: '2024' },
+    { agency: 'Bauhaus', org: 'Hamilton Spectator', award: 'Top in Illustration (Silver)', year: '2024' },
+    { agency: 'Mack Miller (Lithograph)', org: 'Hamilton Spectator', award: 'UAB Top Committe', year: '2024' },
+    { agency: 'Lauryn Hill (Digital PAinting)', org: 'Hamilton Spectator', award: 'UAB Top Committe', year: '2024' },
   ];
 
   return (

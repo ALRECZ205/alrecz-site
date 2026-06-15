@@ -29,7 +29,7 @@ const expertiseAreas = [
     num: '04',
     title: 'Web Design & Development',
     subtitle: 'Where Thoughtful Design Meets Scalable Engineering',
-    desc: 'With over 20 years of experience, I design and build conversion-focused websites that balance aesthetics and usability—specializing in UX/UI, WordPress development, custom code, and integrating generative AI into modern digital products.',
+    desc: 'With over 10 years of experience, I design and build conversion-focused websites that balance aesthetics and usability—specializing in UX/UI, WordPress development, custom code, and integrating generative AI into modern digital products.',
     items: ['UX/UI Design', 'Conversion-Focused Design', 'Web Architecture', 'WordPress Development', 'Custom Theme Development', 'JavaScript', 'AI-Integrated Applications', 'Modern Dev Workflows']
   },
   {
