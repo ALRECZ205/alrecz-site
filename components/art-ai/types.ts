@@ -1,4 +1,22 @@
-export type ArtCategory = 'ALL' | '205' | 'Album Cover' | 'Artist Study' | 'DIGITAL' | 'Experimental' | 'INSTALLATION' | 'DESIGN' | 'ARCHIVE' | 'Brand Art' | 'POSTER' | 'Pop Surrealism' | 'RISO' | 'COLLABORATION';
+export type ArtCategory =
+  | 'DIGITAL'
+  | 'Album Art'
+  | 'Album Cover'
+  | 'Artist Study'
+  | 'Poster'
+  | 'Animation Storyboard'
+  | 'AEVAI Committe Award'
+  | 'Personal Study'
+  | 'Calendar Illustration'
+  | 'RISO PRINT'
+  | 'Experimental'
+  | 'Event Flyer'
+  | 'Commission'
+  | 'Album Cover Commission'
+  | 'Event Flyer Commission'
+  | 'Artist Commission'
+  | 'Character Design'
+  | 'Commission Request';
 
 export interface Artwork {
   id: string;
