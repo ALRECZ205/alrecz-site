@@ -6,7 +6,7 @@ interface CollectionGridProps {
   artworks: Artwork[];
 }
 
-const CATEGORIES: ArtCategory[] = ['ALL', 'PAINTING', 'DIGITAL', 'INSTALLATION', 'DESIGN', 'ARCHIVE', 'COLLABORATION'];
+const CATEGORIES: ArtCategory[] = ['ALL', '205', 'Album Cover', 'Artist Study', 'DIGITAL', 'Experimental', 'INSTALLATION', 'DESIGN', 'ARCHIVE', 'Brand Art', 'POSTER', 'Pop Surrealism', 'RISO', 'COLLABORATION'];
 
 const CollectionGrid: React.FC<CollectionGridProps> = ({ artworks }) => {
   const [activeFilter, setActiveFilter] = useState<ArtCategory>('ALL');

@@ -1,4 +1,4 @@
-export type ArtCategory = 'ALL' | 'PAINTING' | 'DIGITAL' | 'INSTALLATION' | 'DESIGN' | 'ARCHIVE' | 'COLLABORATION';
+export type ArtCategory = 'ALL' | '205' | 'Album Cover' | 'Artist Study' | 'DIGITAL' | 'Experimental' | 'INSTALLATION' | 'DESIGN' | 'ARCHIVE' | 'Brand Art' | 'POSTER' | 'Pop Surrealism' | 'RISO' | 'COLLABORATION';
 
 export interface Artwork {
   id: string;
