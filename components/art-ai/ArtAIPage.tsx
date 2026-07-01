@@ -238,7 +238,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/BD.jpg',
     year: '2023',
     medium: 'Digital Illustration', 
-    category: 'POSTER',
+    category: 'Poster',
     archiveCode: 'ARC-022'
   },
   { 
@@ -368,7 +368,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/TB6.jpg',
     year: '2019', 
     medium: 'Digital illuastration', 
-    category: 'POSTER',
+    category: 'Poster',
     archiveCode: 'ARC-035'
   },
   { 
@@ -378,7 +378,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/lb5.jpg',
     year: '2017', 
     medium: 'Digital illuastration', 
-    category: 'Ablum Art',
+    category: 'Album Cover',
     archiveCode: 'ARC-036'
   },
   { 
@@ -528,7 +528,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/RCP.jpg',
     year: '2021', 
     medium: 'RISO PRINT', 
-    category: 'Calender Illustration',
+    category: 'RISO',
     archiveCode: 'ARC-051'
   },
   {
@@ -618,7 +618,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/CTT.jpg',
     year: '2021', 
     medium: 'Digital Illustration', 
-    category: 'Experimantal',
+    category: 'Experimental',
     archiveCode: 'ARC-060'
   },
   {
@@ -638,7 +638,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/Freda.jpg',
     year: '2017', 
     medium: 'Digital Illustration', 
-    category: 'Commisson',
+    category: 'Commission',
     archiveCode: 'ARC-062'
   },
   {
@@ -648,7 +648,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/Chance1.jpg',
     year: '2017', 
     medium: 'Digital Illustration', 
-    category: 'Commisson',
+    category: 'Commission',
     archiveCode: 'ARC-063'
   },
   {
@@ -658,7 +658,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/STILL.jpg',
     year: '2014', 
     medium: 'Digital Illustration', 
-    category: 'Commisson',
+    category: 'Commission',
     archiveCode: 'ARC-064'
   },
   {
@@ -668,7 +668,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/chris brown.jpg',
     year: '2014', 
     medium: 'Digital Illustration', 
-    category: 'Commisson',
+    category: 'Commission',
     archiveCode: 'ARC-065'
   },
   {
@@ -678,7 +678,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/Amine.jpg',
     year: '2018', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-066'
   },
   {
@@ -688,7 +688,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/siifu.jpg',
     year: '2019', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-067'
   },
   {
@@ -698,7 +698,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/6lack.jpg',
     year: '2018', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-068'
   },
   {
@@ -708,7 +708,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/jid.jpg',
     year: '2016', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-069'
   },
   {
@@ -718,7 +718,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/YE.jpg',
     year: '2017', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-070'
   },
   {
@@ -728,7 +728,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/gunna.jpg',
     year: '2016', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-071'
   },
   {
@@ -738,7 +738,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/drew.jpg',
     year: '2017', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-073'
   },
   {
@@ -748,7 +748,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/dtt.jpg',
     year: '2017', 
     medium: 'Digital Illustration', 
-    category: 'Arist Study',
+    category: 'Artist Study',
     archiveCode: 'ARC-074'
   },
   {
@@ -868,7 +868,7 @@ const ARTWORKS: Artwork[] = [
     image: '/images/art/4Strikes.jpg',
     year: '2015', 
     medium: 'Digital Illustration', 
-    category: 'Charcter Design',
+    category: 'Character Design',
     archiveCode: 'ARC-086'
   },
   {
@@ -1132,20 +1132,10 @@ const ARTWORKS: Artwork[] = [
     archiveCode: 'ARC-112'
   },
   {
-  id: '112', 
+  id: '113', 
     title: 'Hoodfamou$', 
     artist: 'I$H', 
     image: '/images/art/HT.jpg',
-    year: '2023', 
-    medium: 'Digital Illustration', 
-    category: 'Commission Request',
-    archiveCode: 'ARC-112'
-  },
-  {
-  id: '113', 
-    title: 'Spiccoli', 
-    artist: 'I$H', 
-    image: '/images/art/ivan.jpg',
     year: '2023', 
     medium: 'Digital Illustration', 
     category: 'Commission Request',
@@ -1153,38 +1143,116 @@ const ARTWORKS: Artwork[] = [
   },
   {
   id: '114', 
+    title: 'Spiccoli', 
+    artist: 'I$H', 
+    image: '/images/art/ivan.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-114'
+  },
+  {
+  id: '115', 
     title: 'C. Pnazek', 
     artist: 'I$H', 
     image: '/images/art/cole.jpg',
     year: '2023', 
     medium: 'Digital Illustration', 
     category: 'Commission Request',
-    archiveCode: 'ARC-114'
+    archiveCode: 'ARC-115'
+  },
+  {
+  id: '116', 
+    title: 'Lost Boyz 1', 
+    artist: 'I$H', 
+    image: '/images/art/LostBoyz/lb1.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-116'
+  },
+  {
+  id: '117', 
+    title: 'Lost Boyz 2', 
+    artist: 'I$H', 
+    image: '/images/art/LostBoyz/lb2.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-117'
+  },
+  {
+  id: '118', 
+    title: 'Lost Boyz 5', 
+    artist: 'I$H', 
+    image: '/images/art/LostBoyz/lb5.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-118'
+  },
+  {
+  id: '119', 
+    title: 'Lost Boyz 9', 
+    artist: 'I$H', 
+    image: '/images/art/LostBoyz/lb9.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-119'
+  },
+   {
+  id: '120', 
+    title: 'Lost Boyz 10', 
+    artist: 'I$H', 
+    image: '/images/art/LostBoyz/lb10.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-120'
+  },
+  {
+  id: '121', 
+    title: 'Lost Boyz 14', 
+    artist: 'I$H', 
+    image: '/images/art/LostBoyz/lb14.jpg',
+    year: '2023', 
+    medium: 'Digital Illustration', 
+    category: 'Commission Request',
+    archiveCode: 'ARC-121'
   },
 ];
+
+
+const LOST_BOYZ_ARTWORKS = ARTWORKS.filter(art =>
+  ['116', '117', '118', '119', '120', '121', '004', '005'].includes(art.id)
+);
 
 const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-alrecz-black text-alrecz-offwhite font-sans selection:bg-alrecz-blood selection:text-white cursor-none">
       <CustomCursor />
       <CRTOverlay />
-      
-      {/* HEADER / NAV */}
-      <nav className="fixed top-0 w-full z-40 px-6 md:px-12 py-6 flex justify-between items-center mix-blend-difference">
-        <div className="font-display font-bold text-2xl tracking-tighter uppercase">ALRECZ</div>
-        <div className="hidden md:flex gap-8 font-mono text-xs tracking-widest uppercase">
-          <button className="hover:text-alrecz-blood transition-colors text-alrecz-silver/50" data-cursor="hover">[ MUSIC ]</button>
-          <button className="hover:text-alrecz-blood transition-colors text-alrecz-offwhite font-bold" data-cursor="hover">[ ART ]</button>
-          <button className="hover:text-alrecz-blood transition-colors text-alrecz-silver/50" data-cursor="hover">[ SHOP ]</button>
-          <button className="hover:text-alrecz-blood transition-colors text-alrecz-silver/50" data-cursor="hover">[ ARCHIVE ]</button>
-        </div>
-      </nav>
 
       <main className="w-full overflow-hidden">
         <HeroSection />
-        <FeaturedExhibition artwork={ARTWORKS[0]} />
-        <GalleryRail title="Current Transmissions" artworks={ARTWORKS.slice(1, 6)} />
+
+        <FeaturedExhibition />
+
+        <GalleryRail
+          title="Current Transmissions"
+          artworks={ARTWORKS.slice(1, 6)}
+        />
+
+        
+<GalleryRail
+  title="Lost Boyz Collection"
+  artworks={LOST_BOYZ_ARTWORKS}
+  autoScroll={true}
+/>
+
         <CollectionGrid artworks={ARTWORKS} />
+
         <ImmersiveBreak />
         <ArchiveIndex />
       </main>

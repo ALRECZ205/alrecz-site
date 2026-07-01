@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CRTOverlay from './components/CRTOverlay';
+import CRTOverlay from '../CRTOverlay';
 import Hero from './components/Hero';
 import FeaturedRelease from './components/FeaturedRelease';
 import MediaRail from './components/MediaRail';

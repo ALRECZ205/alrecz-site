@@ -28,9 +28,8 @@ const MediaRail: React.FC<MediaRailProps> = ({ title, tracks, onPlay }) => {
       <div ref={constraintsRef} className="pl-6 md:pl-12 cursor-grab active:cursor-grabbing overflow-hidden">
         <motion.div 
           className="flex gap-6 md:gap-8 w-max pr-12"
-          drag="x"
-          dragConstraints={constraintsRef}
-          dragElastic={0.1}
+          drag={autoScroll ? false : "x"}
+  dragConstraints={{ right: 0, left: -width }}
         >
           {tracks.map((track) => (
             <motion.div 

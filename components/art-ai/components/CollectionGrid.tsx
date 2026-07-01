@@ -29,11 +29,12 @@ const CATEGORIES: ('ALL' | ArtCategory)[] = [
 ];
 
 const CollectionGrid: React.FC<CollectionGridProps> = ({ artworks }) => {
-  const [activeFilter, setActiveFilter] = useState<ArtCategory>('ALL');
+  const [activeCategory, setActiveCategory] =
+  useState<ArtCategory | "ALL">("ALL");
 
-  const filteredArtworks = activeFilter === 'ALL' 
-    ? artworks 
-    : artworks.filter(art => art.category === activeFilter);
+  const filteredArtworks = activeCategory === 'ALL'
+  ? artworks
+  : artworks.filter(art => art.category === activeCategory);
 
   return (
     <section className="py-32 px-6 md:px-12 w-full bg-alrecz-black">
@@ -50,12 +51,12 @@ const CollectionGrid: React.FC<CollectionGridProps> = ({ artworks }) => {
             {CATEGORIES.map(cat => (
               <button 
                 key={cat}
-                onClick={() => setActiveFilter(cat)}
+                onClick={() => setActiveCategory(cat)}
                 data-cursor="hover"
-                className={`relative font-display font-medium text-sm md:text-lg uppercase tracking-widest transition-all duration-300 pb-2 ${activeFilter === cat ? 'text-alrecz-offwhite' : 'text-alrecz-silver/50 hover:text-alrecz-silver'}`}
+                className={`relative font-display font-medium text-sm md:text-lg uppercase tracking-widest transition-all duration-300 pb-2 ${activeCategory === cat ? 'text-alrecz-offwhite' : 'text-alrecz-silver/50 hover:text-alrecz-silver'}`}
               >
                 {cat}
-                {activeFilter === cat && (
+                {activeCategory === cat && (
                   <motion.div 
                     layoutId="activeFilter"
                     className="absolute bottom-0 left-0 w-full h-[2px] bg-alrecz-blood"

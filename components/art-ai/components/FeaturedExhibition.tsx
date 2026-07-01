@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react';
 import {
   motion,
-  AnimatePresence,
-  useScroll,
-  useTransform
+  AnimatePresence
 } from 'framer-motion';
 
 interface Exhibition {
@@ -76,17 +74,6 @@ const FeaturedExhibition = () => {
 
   const [direction, setDirection] = useState(1);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["-15%", "15%"]
-  );
-
   const artwork = exhibitions[currentIndex];
 
   const nextArtwork = () => {
@@ -141,12 +128,13 @@ const prevArtwork = () => {
   transition={{ duration: 0.5 }}
   className={`relative overflow-hidden border border-white/10 ${artwork.ratio}`}
 >
-    <motion.img
-      src={artwork.image}
-      alt={artwork.title}
-      style={{ y, scale: 1.01, transformOrigin: "center" }}
-      className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-    />
+    
+<motion.img
+  src={artwork.image}
+  alt={artwork.title}
+  style={{ scale: 1.01 }}
+  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+/>
 
     {/* Overlay Grid */}
     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
