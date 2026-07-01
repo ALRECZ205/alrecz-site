@@ -59,7 +59,7 @@ export default function Expertise() {
         </div>
       </div>
 
-      {expertiseAreas.map((area, idx) => (
+      {expertiseAreas.map((area) => (
         <div key={area.num} className="relative bg-brand-red py-24 md:py-32 px-6 md:px-12 border-t border-black/50 overflow-hidden group">
           {/* Background gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red to-[#80001e] opacity-100 mix-blend-multiply" />

@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import Image from 'next/image';
 import { Play, Activity, Radio } from 'lucide-react';
 import { Track } from '../types';
 
@@ -21,8 +22,12 @@ const RadioSection: React.FC<RadioSectionProps> = ({ tracks, currentTrackId, onP
       const r1 = seeded(i + 1);
       const r2 = seeded(i + 101);
       return {
-        height: 20 + Math.round(r1 * 80),      // 20..100
-        speed: 0.6 + r2 * 0.9,                 // 0.6..1.5
+        height: 20 + Math.round(r1 * 80),        // 20..100
+        // Rounded to 2dp: the browser's CSSOM normalizes serialized
+        // animation-duration strings, so an un-rounded float here would
+        // read back different from what was server-rendered and trip a
+        // hydration mismatch even though the underlying value is stable.
+        speed: Math.round((0.6 + r2 * 0.9) * 100) / 100,
       };
     });
   }, []);
@@ -55,7 +60,9 @@ const RadioSection: React.FC<RadioSectionProps> = ({ tracks, currentTrackId, onP
                   className="w-2 bg-alrecz-blood"
                   style={{
                     height: `${b.height}%`,
-                    animation: `pulse-fast ${b.speed}s infinite`,
+                    animationName: 'pulse-fast',
+                    animationDuration: `${b.speed}s`,
+                    animationIterationCount: 'infinite',
                   }}
                 />
               ))}
@@ -86,9 +93,11 @@ const RadioSection: React.FC<RadioSectionProps> = ({ tracks, currentTrackId, onP
                     {(index + 1).toString().padStart(2, '0')}
                   </span>
 
-                  <img
+                  <Image
                     src={track.cover}
-                    alt=""
+                    alt={track.title}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 object-cover grayscale group-hover:grayscale-0 transition-all"
                   />
 

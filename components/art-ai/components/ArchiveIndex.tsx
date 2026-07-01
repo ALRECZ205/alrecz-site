@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const ArchiveIndex: React.FC = () => {
   return (
@@ -22,7 +21,7 @@ const ArchiveIndex: React.FC = () => {
           </p>
           
           <p className="font-sans text-base text-alrecz-silver/60 leading-relaxed mb-12">
-            We believe in the preservation of digital artifacts. Every piece logged here is assigned a unique identifier and stored within the terminal's memory banks, accessible to those who seek the intersection of art, technology, and underground culture.
+            We believe in the preservation of digital artifacts. Every piece logged here is assigned a unique identifier and stored within the terminal&apos;s memory banks, accessible to those who seek the intersection of art, technology, and underground culture.
           </p>
           
           <button data-cursor="hover" className="px-8 py-4 border border-white/20 text-alrecz-offwhite font-display font-bold tracking-widest uppercase hover:border-alrecz-blood hover:text-alrecz-blood transition-all duration-300">

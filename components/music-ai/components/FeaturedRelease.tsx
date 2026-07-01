@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Play } from "lucide-react";
 import type { Track } from "../types";
 
@@ -24,10 +25,12 @@ export default function FeaturedRelease({
           className="group relative aspect-square md:aspect-[4/5] bg-black border border-white/10 overflow-hidden cursor-pointer"
           onClick={() => onPlay(track)}
         >
-          <img
+          <Image
             src={track.cover}
             alt={track.title}
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
           />
 
           <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-all duration-500" />
@@ -58,7 +61,7 @@ export default function FeaturedRelease({
               {track.artist}
             </span>
             <span className="font-mono text-gray-500 text-sm">
-              /// {track.duration}
+              {'/// '}{track.duration}
             </span>
           </div>
 

@@ -8,8 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['"Space Mono"', "monospace"],
-        retro: ['"VT323"', "monospace"],
+        mono: ["var(--font-space-mono)", "monospace"],
+        retro: ["var(--font-vt323)", "monospace"],
       },
       colors: {
         awge: {

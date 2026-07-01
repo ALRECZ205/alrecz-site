@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import SplitText from './SplitText';
@@ -187,10 +188,12 @@ export default function FeaturedWork() {
     }
 
     return (
-      <img
+      <Image
         src={item.src}
         alt={alt}
-        className={`w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ${className}`}
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className={`object-cover grayscale hover:grayscale-0 transition-all duration-700 ${className}`}
       />
     );
   };
@@ -304,7 +307,7 @@ export default function FeaturedWork() {
 
                     {firstGalleryAsset && (
                       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                        <div className="lg:col-span-7 border border-brand-red/30 bg-black overflow-hidden min-h-[520px]">
+                        <div className="lg:col-span-7 border border-brand-red/30 bg-black overflow-hidden min-h-[520px] relative">
                           {renderAsset(firstGalleryAsset, project.title, 'min-h-[520px]')}
                         </div>
 
@@ -329,22 +332,22 @@ export default function FeaturedWork() {
 
 <div>
   <p className="text-brand-red mb-1">TYPE</p>
-  <p>// {project.category}</p>
+  <p>{'// '}{project.category}</p>
 </div>
 
 <div>
   <p className="text-brand-red mb-1">YEAR</p>
-  <p>// {project.year}</p>
+  <p>{'// '}{project.year}</p>
 </div>
 
 <div>
   <p className="text-brand-red mb-1">CLIENT</p>
-  <p>// {project.client}</p>
+  <p>{'// '}{project.client}</p>
 </div>
 
 <div>
   <p className="text-brand-red mb-1">TOOLS</p>
-  <p>// {project.tools}</p>
+  <p>{'// '}{project.tools}</p>
 </div>
 
 </div>
@@ -354,7 +357,7 @@ export default function FeaturedWork() {
                             {supportAssets.map((item, i) => (
                               <div
                                 key={i}
-                                className="border border-white/10 bg-black overflow-hidden aspect-[16/10]"
+                                className="border border-white/10 bg-black overflow-hidden aspect-[16/10] relative"
                               >
                                 {renderAsset(item, `${project.title} ${i + 2}`)}
                               </div>
@@ -376,7 +379,7 @@ export default function FeaturedWork() {
                               {collection.assets.map((item, i) => (
                                 <div
                                   key={i}
-                                  className="border border-white/10 bg-black overflow-hidden aspect-[16/10]"
+                                  className="border border-white/10 bg-black overflow-hidden aspect-[16/10] relative"
                                 >
                                   {renderAsset(item, `${collection.name} ${i + 1}`)}
                                 </div>
@@ -409,11 +412,13 @@ export default function FeaturedWork() {
         <div className="absolute inset-0 bg-brand-red/20 mix-blend-overlay z-20" />
 
         {projects.map((project) => (
-          <img
+          <Image
             key={project.id}
             src={project.image}
             alt={project.title}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+            fill
+            sizes="25vw"
+            className={`object-cover transition-opacity duration-300 ${
               hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
             }`}
           />

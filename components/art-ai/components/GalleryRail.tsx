@@ -65,7 +65,9 @@ useEffect(() => {
   className="flex gap-8"
   drag={!autoScroll ? "x" : false}
   dragConstraints={!autoScroll ? { right: 0, left: -width } : undefined}
-  dragElastic={0.1}
+  dragElastic={0.12}
+  dragTransition={!autoScroll ? { power: 0.35, timeConstant: 220, bounceStiffness: 320, bounceDamping: 28 } : undefined}
+  data-cursor={!autoScroll ? "gallery" : undefined}
   animate={autoScroll ? { x: [0, -width] } : undefined}
   transition={
     autoScroll
@@ -83,7 +85,6 @@ useEffect(() => {
                 className="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] group relative transform-gpu"
                 whileHover={!autoScroll ? { y: -10 } : undefined}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                data-cursor={!autoScroll ? "hover" : undefined}
               >
                 {/* Image Container */}
                 <div className="relative aspect-[3/4] overflow-hidden border border-white/10 mb-6 bg-alrecz-charcoal pointer-events-none">

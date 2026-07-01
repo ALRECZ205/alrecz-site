@@ -1,7 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import { Play, Pause, SkipBack, SkipForward, Volume2, Mic2 } from 'lucide-react';
 import { Track } from '../types';
-import GlitchText from './GlitchText';
 
 interface MusicPlayerProps {
   currentTrack: Track | null;
@@ -31,17 +31,19 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
         
         {/* Track Info */}
         <div className="flex items-center gap-4 overflow-hidden">
-          <img 
-            src={currentTrack.cover} 
-            alt="Now Playing" 
-            className={`w-10 h-10 md:w-12 md:h-12 object-cover border border-white/10 ${isPlaying ? 'animate-pulse-fast' : ''}`} 
+          <Image
+            src={currentTrack.cover}
+            alt="Now Playing"
+            width={48}
+            height={48}
+            className={`w-10 h-10 md:w-12 md:h-12 object-cover border border-white/10 ${isPlaying ? 'animate-pulse-fast' : ''}`}
           />
           <div className="flex flex-col truncate">
             <h4 className="font-grotesk font-bold uppercase text-sm md:text-base tracking-wide truncate">
               {currentTrack.title}
             </h4>
             <span className="font-mono text-[10px] md:text-xs text-gray-400 truncate">
-              {currentTrack.artist} // <span className="text-alrecz-blood">{currentTrack.duration}</span>
+              {currentTrack.artist} {'// '}<span className="text-alrecz-blood">{currentTrack.duration}</span>
             </span>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 import { Track } from '../types';
 
 interface MediaRailProps {
@@ -10,7 +10,7 @@ interface MediaRailProps {
 }
 
 const MediaRail: React.FC<MediaRailProps> = ({ title, tracks, onPlay }) => {
-  const constraintsRef = useRef(null);
+  const constraintsRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className="py-20 border-b border-white/10 bg-black overflow-hidden">
@@ -26,10 +26,13 @@ const MediaRail: React.FC<MediaRailProps> = ({ title, tracks, onPlay }) => {
       </div>
 
       <div ref={constraintsRef} className="pl-6 md:pl-12 cursor-grab active:cursor-grabbing overflow-hidden">
-        <motion.div 
+        <motion.div
           className="flex gap-6 md:gap-8 w-max pr-12"
-          drag={autoScroll ? false : "x"}
-  dragConstraints={{ right: 0, left: -width }}
+          drag="x"
+          dragConstraints={constraintsRef}
+          dragElastic={0.12}
+          dragTransition={{ power: 0.35, timeConstant: 220, bounceStiffness: 320, bounceDamping: 28 }}
+          data-cursor="gallery"
         >
           {tracks.map((track) => (
             <motion.div 
@@ -41,10 +44,12 @@ const MediaRail: React.FC<MediaRailProps> = ({ title, tracks, onPlay }) => {
             <div
   className="aspect-square w-full overflow-hidden bg-gray-900 border border-white/10 relative mb-4 group cursor-pointer">
   {/* IMAGE */}
-  <img
+  <Image
     src={track.cover}
     alt={track.title}
-    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    fill
+    sizes="(max-width: 768px) 280px, 350px"
+    className="object-cover transition-transform duration-500 group-hover:scale-105"
   />
 
   {/* DARK HOVER OVERLAY (BOTTOM INFO STYLE) */}

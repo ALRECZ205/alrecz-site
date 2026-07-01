@@ -6,6 +6,10 @@ import * as THREE from 'three';
 const ParticleRing = ({ count = 1000, radius = 2 }) => {
   const points = useRef<THREE.Points>(null);
   
+  // Decorative particle cloud — regenerating a fresh random scatter each
+  // time count/radius changes (e.g. on hover) is the intended behavior,
+  // not a bug, so determinism isn't a goal here.
+  /* eslint-disable react-hooks/purity */
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -17,6 +21,7 @@ const ParticleRing = ({ count = 1000, radius = 2 }) => {
     }
     return pos;
   }, [count, radius]);
+  /* eslint-enable react-hooks/purity */
 
   useFrame((state) => {
     if (points.current) {

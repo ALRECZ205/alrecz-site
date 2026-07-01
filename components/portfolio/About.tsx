@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import SplitText from './SplitText';
 
 export default function About() {
@@ -25,14 +26,16 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full max-w-3xl overflow-hidden border border-brand-red/30 relative group"
+            className="w-full max-w-3xl aspect-[4/5] overflow-hidden border border-brand-red/30 relative group"
           >
             <div className="absolute inset-0 bg-brand-red/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500" />
             <div className="absolute inset-0 dither-pattern opacity-30 mix-blend-overlay z-10" />
-           <img
-            src="/images/about/me01.jpg"
-            alt="Pelatiah Morgan"
-            className="w-full h-auto grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700"
+            <Image
+              src="/images/about/me01.jpg"
+              alt="Pelatiah Morgan"
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700"
             />
             <div className="absolute bottom-4 right-4 z-20 bg-brand-black/80 border border-brand-red px-3 py-1 text-[10px] font-mono text-brand-red uppercase tracking-widest backdrop-blur-sm">
               REC // 00:00:00
@@ -58,13 +61,13 @@ export default function About() {
                 <span className="text-brand-red">{'>'}</span> Over the years that hunger pushed me in every creative direction—producing music, owning and running my own photography studio, launching a web design agency, shipping apps and SaaS products, even building video games in my spare time.
               </p>
               <p>
-                <span className="text-brand-red">{'>'}</span> Early in my career I was frustrated as hell. I'd spent my entire teenage years studying the best designers in the world, dreaming of joining an agency that would level me up. Instead I watched too many agencies cut corners, bloat scope, under-deliver, and chase quick money.
+                <span className="text-brand-red">{'>'}</span> Early in my career I was frustrated as hell. I&apos;d spent my entire teenage years studying the best designers in the world, dreaming of joining an agency that would level me up. Instead I watched too many agencies cut corners, bloat scope, under-deliver, and chase quick money.
               </p>
               <p>
-                <span className="text-brand-red">{'>'}</span> That philosophy has guided me for the last 16 years and eventually led me to Creative Director roles where I could shape entire brands from the ground up. Today I still bring that same approach to every project—even if I'm "just" building a website.
+                <span className="text-brand-red">{'>'}</span> That philosophy has guided me for the last 16 years and eventually led me to Creative Director roles where I could shape entire brands from the ground up. Today I still bring that same approach to every project—even if I&apos;m &quot;just&quot; building a website.
               </p>
               <p>
-                <span className="text-brand-red">{'>'}</span> And now? AI has thrown rocket fuel on the fire. Ideas hit me at 1000 per minute and I can go from concept to polished execution faster than ever. I'm shipping more projects simultaneously than I ever thought possible—and honestly, I'm not even sure AI can keep up with me anymore. (Challenge accepted.)
+                <span className="text-brand-red">{'>'}</span> And now? AI has thrown rocket fuel on the fire. Ideas hit me at 1000 per minute and I can go from concept to polished execution faster than ever. I&apos;m shipping more projects simultaneously than I ever thought possible—and honestly, I&apos;m not even sure AI can keep up with me anymore. (Challenge accepted.)
               </p>
             </motion.div>
           </div>

@@ -2,17 +2,18 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Hero from "./components/Hero";
 import FilterBar from "./components/FilterBar";
 import FeaturedRelease from "./components/FeaturedRelease";
 import MediaRail from "./components/MediaRail";
 import RadioSection from "./components/RadioSection";
 import MusicPlayer from "./components/MusicPlayer";
-import CRTOverlay from "@/components/legacy/components/CRTOverlay";
+import Footer from "@/components/shared/Footer";
 
 import { TRACKS, CATEGORIES } from "./data";
 import type { Track, MusicCategory } from "./types";
-import { Instagram, Youtube, Mic2, Disc } from "lucide-react";
+import { Disc } from "lucide-react";
 
 export default function MusicAIPage() {
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
@@ -47,19 +48,6 @@ export default function MusicAIPage() {
 
   return (
     <div className="relative min-h-screen bg-alrecz-black text-alrecz-paper font-mono selection:bg-alrecz-blood selection:text-white">
-      
-      <CRTOverlay />
-      
-      {/* HEADER / NAV */}
-      <nav className="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center mix-blend-difference">
-        <div className="font-grotesk font-bold text-2xl tracking-tighter">ALRECZ</div>
-        <div className="hidden md:flex gap-6 font-mono text-xs">
-          <button className="hover:text-alrecz-blood transition-colors">[ MUSIC ]</button>
-          <button className="hover:text-alrecz-blood transition-colors text-gray-500">[ SHOP ]</button>
-          <button className="hover:text-alrecz-blood transition-colors text-gray-500">[ ARCHIVE ]</button>
-        </div>
-      </nav>
-
       <main className="pb-32">
         <Hero />
 
@@ -107,9 +95,11 @@ export default function MusicAIPage() {
                 </div>
 
                 <div className="flex gap-4 items-center">
-                  <img
+                  <Image
                     src={track.cover}
-                    alt=""
+                    alt={track.title}
+                    width={80}
+                    height={80}
                     className="w-20 h-20 object-cover grayscale group-hover:grayscale-0 transition-all"
                   />
                   <div>
@@ -131,42 +121,7 @@ export default function MusicAIPage() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-black border-t border-white/10 pt-16 pb-32 px-6 md:px-12 font-mono text-xs">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
-          <div>
-            <div className="text-4xl font-grotesk font-bold mb-4 text-white">ALRECZ</div>
-            <p className="text-gray-500 max-w-xs mb-8">
-              A digital imprint for the new era of sound.
-              <br />
-              Est. 2026. No Rights Reserved.
-            </p>
-            <div className="flex gap-6">
-              <Instagram
-                className="text-gray-500 hover:text-alrecz-blood cursor-pointer transition-colors"
-                size={20}
-              />
-              <Youtube
-                className="text-gray-500 hover:text-alrecz-blood cursor-pointer transition-colors"
-                size={20}
-              />
-              <Mic2
-                className="text-gray-500 hover:text-alrecz-blood cursor-pointer transition-colors"
-                size={20}
-              />
-            </div>
-          </div>
-
-          <div className="text-right">
-            <div className="mb-2 text-alrecz-blood animate-pulse">● SYSTEM ONLINE</div>
-            <div className="text-gray-600">
-              ALRECZ://MUSIC_TERMINAL
-              <br />
-              V.2.5.0
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <MusicPlayer
         currentTrack={currentTrack}

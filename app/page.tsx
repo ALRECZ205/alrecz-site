@@ -1,7 +1,5 @@
-'use client';
-
-import AppClient from '@/components/AppClient';
+import HomeExperience from '@/components/home/HomeExperience';
 
 export default function Page() {
-  return <AppClient />;
+  return <HomeExperience />;
 }

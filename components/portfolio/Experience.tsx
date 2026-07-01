@@ -114,7 +114,7 @@ export default function Experience() {
                           {exp.role}
                         </div>
                         <div className="text-xs opacity-70 uppercase tracking-[0.2em] font-mono flex items-center text-brand-red-light">
-                          {exp.location} // {exp.date}
+                          {exp.location} {'// '}{exp.date}
                         </div>
                       </div>
                       

@@ -1,6 +1,6 @@
 import React from 'react';
-import ThreeScene from '@/components/legacy/components/ThreeScene';
-import GlitchText from '@/components/legacy/components/GlitchText';
+import ThreeScene from './ThreeScene';
+import GlitchText from '@/components/shared/GlitchText';
 import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {

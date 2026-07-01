@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Artwork, ArtCategory } from '../types';
 
@@ -88,10 +89,12 @@ const CollectionGrid: React.FC<CollectionGridProps> = ({ artworks }) => {
               >
                 {/* Image Container */}
                 <div className="relative aspect-square overflow-hidden border border-white/10 mb-6 bg-alrecz-charcoal">
-                  <img 
-                    src={art.image} 
-                    alt={art.title} 
-                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  <Image
+                    src={art.image}
+                    alt={art.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-alrecz-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
