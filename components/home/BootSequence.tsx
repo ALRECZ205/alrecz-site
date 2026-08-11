@@ -1,122 +1,73 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import GlitchText from '@/components/shared/GlitchText';
-import { setCursorLoading } from '@/components/shared/cursor/cursorLoading';
-
-const BOOT_LINES = [
-  '[OK] mounting archive',
-  '[OK] decrypting media index',
-  '[OK] loading exhibition data',
-  '[OK] syncing signal',
-  '[READY] awaiting input',
-];
-
-type Phase = 'flicker' | 'boot' | 'ready';
 
 interface BootSequenceProps {
   onEnter: () => void;
 }
 
 /**
- * Short, cinematic boot: a CRT flicker beat, a fast diagnostic readout,
- * then the ENTER ARCHIVE threshold. Total time-to-interactive is under
- * ~1.3s before the prompt appears — the old sequence hard-blocked on a
- * flat 2.5s setTimeout regardless of what the visitor wanted. This only
- * ever runs once per session (see HomeExperience).
+ * The original opening screen, restored as-is: video background, a fixed
+ * 2.5s "LOADING... / INITIALIZING ASSETS" beat, then the ENTER ARCHIVE
+ * prompt. This intentionally does not add session-skip or keyboard
+ * shortcuts beyond what the original had — it's a faithful restore, not
+ * a redesign.
  */
 export default function BootSequence({ onEnter }: BootSequenceProps) {
-  const [phase, setPhase] = useState<Phase>('flicker');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setCursorLoading(true);
-    const toBoot = setTimeout(() => setPhase('boot'), 350);
-    return () => clearTimeout(toBoot);
+    const timer = setTimeout(() => setLoading(false), 2500);
+    return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (phase !== 'boot') return;
-    const toReady = setTimeout(() => {
-      setPhase('ready');
-      setCursorLoading(false);
-    }, 250 + BOOT_LINES.length * 140);
-    return () => clearTimeout(toReady);
-  }, [phase]);
-
-  useEffect(() => {
-    if (phase !== 'ready') return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' || e.key === ' ') onEnter();
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [phase, onEnter]);
 
   return (
     <motion.div
-      className="fixed inset-0 z-[9985] bg-alrecz-black flex flex-col items-center justify-center overflow-hidden"
-      exit={{ opacity: 0, filter: 'brightness(3)' }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed inset-0 z-[9985] w-full h-screen bg-black overflow-hidden cursor-crosshair"
     >
-      <motion.div
-        className="absolute inset-0 bg-white pointer-events-none"
-        initial={{ opacity: 0.9 }}
-        animate={{ opacity: 0 }}
-        transition={{ duration: 0.35, times: [0, 1] }}
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/video/Intro.mp4" type="video/mp4" />
+      </video>
 
-      <div className="relative z-10 w-full max-w-md px-6 font-mono text-xs md:text-sm text-alrecz-silver">
-        <AnimatePresence mode="wait">
-          {phase !== 'ready' ? (
-            <motion.div
-              key="boot"
-              exit={{ opacity: 0 }}
-              className="space-y-2"
-            >
-              {phase === 'boot' &&
-                BOOT_LINES.map((line, i) => (
-                  <motion.p
-                    key={line}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.14, duration: 0.25 }}
-                    className={i === BOOT_LINES.length - 1 ? 'text-alrecz-blood' : ''}
-                  >
-                    {line}
-                  </motion.p>
-                ))}
-            </motion.div>
-          ) : (
-            <motion.div
-              key="enter"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <button
-                onClick={onEnter}
-                data-cursor="button"
-                className="group"
-                aria-label="Enter the ALRECZ archive"
-              >
-                <GlitchText
-                  text="ENTER ARCHIVE"
-                  as="h1"
-                  className="text-3xl md:text-6xl font-display font-bold text-alrecz-offwhite tracking-tight"
-                />
-              </button>
-              <p className="mt-6 text-[10px] tracking-[0.3em] text-alrecz-silver/70 animate-pulse">
-                [ CLICK OR PRESS ENTER ]
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      <div className="absolute inset-0 bg-black/60 z-[1]" />
 
-      <div className="absolute bottom-6 left-6 font-mono text-[10px] text-alrecz-silver/50 tracking-widest">
-        ALRECZ // v2.0
+      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+        {loading ? (
+          <div className="text-center">
+            <h1 className="text-4xl md:text-8xl font-retro text-white animate-pulse">
+              LOADING...
+            </h1>
+            <p className="font-mono text-xs text-awge-yellow mt-4">
+              INITIALIZING ASSETS
+            </p>
+          </div>
+        ) : (
+          <div className="text-center cursor-pointer" onClick={onEnter}>
+            <GlitchText
+              text="ENTER ARCHIVE"
+              as="h1"
+              className="text-4xl md:text-8xl font-retro font-bold text-white mb-8"
+            />
+            <p className="text-xs font-mono text-gray-400 mt-4 animate-bounce">
+              [ CLICK TO START ]
+            </p>
+          </div>
+        )}
+
+        <div className="absolute bottom-4 left-4 font-mono text-xs text-gray-500">
+          v2.0.25 - SYSTEM READY
+        </div>
       </div>
     </motion.div>
   );

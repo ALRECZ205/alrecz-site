@@ -11,7 +11,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'MUSIC', href: '/music', type: 'route' },
   { label: 'LAB', href: '/lab', type: 'route' },
   { label: 'SHOP', href: '/shop', type: 'route' },
-  { label: 'ABOUT', href: '#about', type: 'anchor' },
+  { label: 'ABOUT', href: '/portfolio', type: 'route' },
   { label: 'CONTACT', href: '#contact', type: 'anchor' },
 ];
 

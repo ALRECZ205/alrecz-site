@@ -1,5 +1,6 @@
 import React from 'react';
 import ThreeScene from './ThreeScene';
+import ArchivePlacard from './ArchivePlacard';
 import GlitchText from '@/components/shared/GlitchText';
 import { ArrowRight } from 'lucide-react';
 
@@ -66,12 +67,8 @@ const Hero: React.FC = () => {
             </p>
           </div>
 
-          <div className="w-full aspect-square border border-white/10 p-2 relative bg-white/[0.03]">
-            <div className="absolute top-0 left-0 w-full h-px bg-alrecz-blood" />
-            <div className="w-full h-full flex items-center justify-center bg-white/[0.02] overflow-hidden">
-              <div className="w-full h-1 bg-alrecz-blood animate-scanline absolute top-0" />
-              <span className="font-grotesk text-6xl text-white/10 font-bold">AL</span>
-            </div>
+          <div className="w-full aspect-square">
+            <ArchivePlacard />
           </div>
         </div>
       </div>

@@ -30,13 +30,13 @@ export default function Awards() {
 
         <div className="border-t border-brand-red/20">
           {awards.map((award, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-8 border-b border-brand-red/20 text-sm md:text-base items-center hover:bg-brand-red/10 transition-colors px-4 -mx-4 font-mono"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-8 border-b border-brand-red/20 text-sm md:text-base items-center hover:bg-brand-red/10 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] px-4 -mx-4 font-mono"
             >
               <div className="opacity-70 text-white/70">{award.agency}</div>
               <div className="font-bold text-white/90">{award.org}</div>

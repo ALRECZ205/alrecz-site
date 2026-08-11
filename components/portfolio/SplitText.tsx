@@ -19,7 +19,7 @@ export default function SplitText({
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: delay * i },
+      transition: { staggerChildren: 0.06, delayChildren: delay * i },
     }),
   };
 
@@ -29,13 +29,13 @@ export default function SplitText({
       y: 0,
       transition: {
         type: 'spring' as const,
-        damping: 20,
-        stiffness: 100,
+        damping: 26,
+        stiffness: 110,
       },
     },
     hidden: {
       opacity: 0,
-      y: 50,
+      y: 36,
     },
   };
 

@@ -85,27 +85,48 @@ export default function Experience() {
           </div>
         </div>
 
-        <div className="border-t border-brand-red/20">
+        <div className="relative border-t border-brand-red/20">
+          {/* The connecting rail is what turns this from a plain accordion
+              list into something that actually reads as a timeline —
+              nodes below sit on top of it, one per role. */}
+          <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-brand-red/40 via-brand-red/20 to-transparent hidden md:block" />
+
           {experiences.map((exp, idx) => (
             <div key={idx} className="border-b border-brand-red/20">
-              <button 
-                className="w-full py-10 flex items-center justify-between text-left hover:text-brand-red transition-colors group"
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                className="relative z-10 w-full py-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-left hover:text-brand-red transition-colors group"
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                aria-expanded={openIdx === idx}
               >
                 <div className="flex items-center gap-8">
-                  <div className={`w-10 h-10 rounded-none border flex items-center justify-center transition-colors ${openIdx === idx ? 'border-brand-red text-brand-red bg-brand-red/10' : 'border-white/20 group-hover:border-brand-red'}`}>
+                  <div
+                    className={`w-10 h-10 shrink-0 rounded-none border flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-brand-black ${
+                      openIdx === idx
+                        ? 'border-brand-red text-brand-red bg-brand-red/10 scale-110'
+                        : 'border-white/20 group-hover:border-brand-red'
+                    }`}
+                  >
                     {openIdx === idx ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                   <h3 className="text-3xl md:text-5xl font-bold tracking-tighter uppercase">{exp.company}</h3>
                 </div>
-              </button>
-              
-              <AnimatePresence>
+
+                <span className="md:ml-auto pl-18 md:pl-0 font-mono text-xs uppercase tracking-[0.2em] text-brand-red-light/70 group-hover:text-brand-red-light transition-colors">
+                  {exp.date}
+                </span>
+              </motion.button>
+
+              <AnimatePresence initial={false}>
                 {openIdx === idx && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
                     <div className="pb-16 pt-4 pl-0 md:pl-18">
@@ -117,17 +138,23 @@ export default function Experience() {
                           {exp.location} {'// '}{exp.date}
                         </div>
                       </div>
-                      
+
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         <p className="text-xl md:text-2xl font-medium leading-relaxed text-white/90">
                           {exp.desc}
                         </p>
                         <ul className="space-y-6">
                           {exp.bullets.map((bullet, i) => (
-                            <li key={i} className="flex gap-4 opacity-80 text-sm md:text-base font-mono">
+                            <motion.li
+                              key={i}
+                              initial={{ opacity: 0, x: -12 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.4, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                              className="flex gap-4 opacity-80 text-sm md:text-base font-mono"
+                            >
                               <span className="text-brand-red mt-1 font-bold">{'>'}</span>
                               <span>{bullet}</span>
-                            </li>
+                            </motion.li>
                           ))}
                         </ul>
                       </div>

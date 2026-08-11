@@ -7,7 +7,7 @@ import Clients from '@/components/portfolio/Clients';
 import Stats from '@/components/portfolio/Stats';
 import Awards from '@/components/portfolio/Awards';
 import About from '@/components/portfolio/About';
-import Footer from '@/components/shared/Footer';
+import Footer from '@/components/portfolio/Footer';
 
 export default function PortfolioPage() {
   return (

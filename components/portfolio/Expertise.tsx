@@ -60,7 +60,14 @@ export default function Expertise() {
       </div>
 
       {expertiseAreas.map((area) => (
-        <div key={area.num} className="relative bg-brand-red py-24 md:py-32 px-6 md:px-12 border-t border-black/50 overflow-hidden group">
+        <motion.div
+          key={area.num}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative bg-brand-red py-24 md:py-32 px-6 md:px-12 border-t border-black/50 overflow-hidden group"
+        >
           {/* Background gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red to-[#80001e] opacity-100 mix-blend-multiply" />
           <div className="absolute inset-0 dither-pattern opacity-30 mix-blend-overlay" />
@@ -83,24 +90,24 @@ export default function Expertise() {
                   text={area.subtitle} 
                   className="text-2xl md:text-4xl font-medium uppercase tracking-tight leading-tight mb-8 text-brand-black" 
                 />
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                   className="text-lg md:text-xl opacity-90 mb-16 max-w-3xl leading-relaxed text-brand-black font-medium"
                 >
                   {area.desc}
                 </motion.p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
                   {area.items.map((item, i) => (
-                    <motion.div 
-                      key={i} 
+                    <motion.div
+                      key={i}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex justify-between items-center border-b border-brand-black/20 py-5 hover:border-brand-black transition-colors"
+                      transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                      className="flex justify-between items-center border-b border-brand-black/20 py-5 hover:border-brand-black hover:pl-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     >
                       <span className="text-lg font-bold text-brand-black uppercase tracking-tight">{item}</span>
                       <span className="text-xs opacity-50 font-mono text-brand-black">0{i + 1}</span>
@@ -110,7 +117,7 @@ export default function Expertise() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </section>
   );

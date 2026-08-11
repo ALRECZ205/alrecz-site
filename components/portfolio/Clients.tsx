@@ -53,11 +53,11 @@ export default function Clients() {
                 className="text-3xl md:text-5xl font-medium uppercase tracking-tight leading-tight mb-16 text-white/80" 
               />
               
-              <a href="#contact" className="inline-flex items-center gap-6 bg-transparent border border-brand-red text-brand-red px-8 py-5 font-mono text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-red hover:text-brand-black transition-all duration-300 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-brand-red origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out -z-10" />
+              <a href="#contact" className="inline-flex items-center gap-6 bg-transparent border border-brand-red text-brand-red px-8 py-5 font-mono text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-red hover:text-brand-black transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group relative overflow-hidden">
+                <div className="absolute inset-0 bg-brand-red origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] -z-10" />
                 <span>[ EXECUTE // CONNECT ]</span>
                 <div className="w-8 h-8 flex items-center justify-center">
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </div>
               </a>
             </div>
@@ -69,46 +69,50 @@ export default function Clients() {
                 const isOpen = openIdx === idx;
                 return (
                   <div key={idx} className="border-b border-brand-red/20">
-                    <button 
-                      className="w-full py-8 flex items-center gap-6 text-left hover:text-brand-red transition-colors group"
+                    <button
+                      className="w-full py-8 flex items-center gap-6 text-left hover:text-brand-red transition-colors duration-300 group"
                       onClick={() => setOpenIdx(isOpen ? null : idx)}
+                      aria-expanded={isOpen}
                     >
                       <div className="w-10 h-10 shrink-0 relative text-brand-red">
                         <svg width="100%" height="100%" viewBox="0 0 40 40" preserveAspectRatio="none">
                           <rect x="2" y="2" width="36" height="36" stroke="currentColor" strokeWidth="1" fill="none" className="opacity-30" />
-                          <rect 
-                            x="2" y="2" width="36" height="36" stroke="currentColor" strokeWidth="1" fill="none" 
-                            strokeDasharray="144" 
-                            strokeDashoffset={isOpen ? 0 : 144} 
-                            className="transition-all duration-700 ease-in-out"
+                          <rect
+                            x="2" y="2" width="36" height="36" stroke="currentColor" strokeWidth="1" fill="none"
+                            strokeDasharray="144"
+                            strokeDashoffset={isOpen ? 0 : 144}
+                            className="transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                           />
-                          <path 
-                            d="M20,12 L20,28" 
+                          <path
+                            d="M20,12 L20,28"
                             stroke="currentColor" strokeWidth="1" strokeLinecap="square"
-                            className={`transition-transform duration-700 ease-in-out origin-center ${isOpen ? 'rotate-90' : ''}`}
+                            className={`transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-center ${isOpen ? 'rotate-90' : ''}`}
                           />
-                          <path 
-                            d="M12,20 L28,20" 
+                          <path
+                            d="M12,20 L28,20"
                             stroke="currentColor" strokeWidth="1" strokeLinecap="square"
-                            className={`transition-transform duration-700 ease-in-out origin-center ${isOpen ? 'rotate-90 scale-x-0' : ''}`}
+                            className={`transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-center ${isOpen ? 'rotate-90 scale-x-0' : ''}`}
                           />
                         </svg>
                       </div>
-                      <h4 className="text-xl md:text-2xl font-bold tracking-tight uppercase">{cat.title}</h4>
+                      <h4 className="text-xl md:text-2xl font-bold tracking-tight uppercase group-hover:translate-x-1 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                        {cat.title}
+                      </h4>
                     </button>
-                    
-                    <AnimatePresence>
+
+                    <AnimatePresence initial={false}>
                       {isOpen && (
-                        <motion.div 
+                        <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                           className="overflow-hidden"
                         >
                           <div className="pb-12 pl-16">
                             <ul className="grid grid-cols-1 gap-y-4">
                               {cat.clients.map((client, i) => (
-                                <li key={i} className="opacity-70 text-sm font-mono flex items-start gap-4 hover:text-brand-red hover:opacity-100 transition-colors cursor-default">
+                                <li key={i} className="opacity-70 text-sm font-mono flex items-start gap-4 hover:text-brand-red hover:opacity-100 hover:translate-x-1 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-default">
                                   <span className="text-brand-red mt-1 font-bold">{'>'}</span>
                                   {client}
                                 </li>
