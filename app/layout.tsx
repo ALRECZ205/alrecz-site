@@ -36,9 +36,56 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "ALRECZ — Archive",
+  title: "ALRECZ | Artist • Designer • Creative Director",
+
   description:
-    "ALRECZ: living digital archive of art, music, and creative work out of Birmingham, Alabama.",
+    "The official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
+
+  keywords: [
+    "ALRECZ",
+    "Pelatiah Williams",
+    "digital artist",
+    "graphic designer",
+    "creative director",
+    "mural artist",
+    "branding",
+    "illustration",
+    "Birmingham artist"
+  ],
+
+  authors: [
+    {
+      name: "Pelatiah Williams",
+    },
+  ],
+
+  creator: "ALRECZ",
+
+  metadataBase: new URL("https://www.alrecz.com"),
+
+  openGraph: {
+    title: "ALRECZ",
+    description:
+      "Official portfolio of Pelatiah Williams.",
+    url: "https://www.alrecz.com",
+    siteName: "ALRECZ",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "ALRECZ",
+    description: "Official portfolio",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
