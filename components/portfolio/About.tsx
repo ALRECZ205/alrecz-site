@@ -36,7 +36,7 @@ export default function About() {
           </motion.p>
           <SplitText
             text="Creative Director"
-            className="text-[15vw] font-bold uppercase tracking-tighter leading-none whitespace-nowrap justify-center text-glitch"
+            className="text-[clamp(2.5rem,10vw,9rem)] font-bold uppercase tracking-tighter leading-none whitespace-nowrap justify-center text-glitch"
           />
           <p className="mt-6 font-mono text-xs md:text-sm tracking-[0.2em] uppercase text-white/40">
             The story behind the work
