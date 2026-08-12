@@ -63,6 +63,31 @@ export const metadata: Metadata = {
 
   metadataBase: new URL("https://www.alrecz.com"),
 
+  // ✅ Add this
+  alternates: {
+    canonical: "https://www.alrecz.com",
+  },
+
+  // ✅ Add this
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // ✅ Add this
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
   openGraph: {
     title: "ALRECZ",
     description:
