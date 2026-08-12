@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   // Facebook/LinkedIn/Discord use, and a 1:1 square fallback for
   // platforms that crop to square instead (iMessage, WhatsApp, Skype).
   openGraph: {
-    title: "ALRECZ | Artist • Designer • Creative Director",
+    title: "Welcome to Alabama Records | Experience the BEGINNING",
     description:
       "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
     url: "https://www.alrecz.com",
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "ALRECZ | Artist • Designer • Creative Director",
+    title: "Welcome to Alabama Records | Experience the BEGINNING",
     description:
       "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
     images: [
