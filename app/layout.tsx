@@ -81,38 +81,66 @@ export const metadata: Metadata = {
     },
   },
 
-  // ✅ Add this
   icons: {
-    icon: "/favicon.ico",
+    // app/favicon.ico is picked up automatically by Next's file-based
+    // favicon convention, so it doesn't need to be listed here too.
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 
+  manifest: "/site.webmanifest",
+
+  // Absolute URLs here (rather than relying on metadataBase to resolve
+  // relative ones) because a handful of link-preview crawlers — notably
+  // iMessage's and some in-app browsers (Slack, Discord mobile) — have
+  // historically failed to resolve relative og:image paths correctly.
+  // Two images are provided: the standard 1.91:1 og-image.jpg that
+  // Facebook/LinkedIn/Discord use, and a 1:1 square fallback for
+  // platforms that crop to square instead (iMessage, WhatsApp, Skype).
   openGraph: {
-  title: "ALRECZ | Artist • Designer • Creative Director",
-  description:
-    "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
-  url: "https://www.alrecz.com",
-  siteName: "ALRECZ",
-  images: [
-    {
-      url: "/og-image.jpg",
-      width: 1200,
-      height: 630,
-      alt: "ALRECZ Portfolio Preview",
-    },
-  ],
-  locale: "en_US",
-  type: "website",
-},
+    title: "ALRECZ | Artist • Designer • Creative Director",
+    description:
+      "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
+    url: "https://www.alrecz.com",
+    siteName: "ALRECZ",
+    images: [
+      {
+        url: "https://www.alrecz.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ALRECZ Portfolio Preview",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.alrecz.com/og-image-square.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "ALRECZ Portfolio Preview",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 
   twitter: {
-  card: "summary_large_image",
-  title: "ALRECZ | Artist • Designer • Creative Director",
-  description:
-    "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
-  images: ["/og-image.jpg"],
-},
+    card: "summary_large_image",
+    title: "ALRECZ | Artist • Designer • Creative Director",
+    description:
+      "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
+    images: [
+      {
+        url: "https://www.alrecz.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ALRECZ Portfolio Preview",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
