@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   title: "ALRECZ | Artist • Designer • Creative Director",
 
   description:
-    "The official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
+    "The official site of 'ALRECZ' featuring digital art, murals, branding, exhibitions, and creative direction.",
 
   keywords: [
     "ALRECZ",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ALRECZ",
     description:
-      "Official portfolio of Pelatiah Williams.",
+      "The official site of 'ALRECZ'.",
     url: "https://www.alrecz.com",
     siteName: "ALRECZ",
     images: [
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ALRECZ",
-    description: "Official portfolio",
+    description: "Official Site",
     images: ["/og-image.jpg"],
   },
 };
