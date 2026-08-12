@@ -2,8 +2,12 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import { FileDown } from 'lucide-react';
 import SplitText from './SplitText';
 import { fadeUpDelay } from '@/lib/motion';
+
+const RESUME_PATH = '/documents/Ishmael_Morgan_Resume_2026.pdf';
+const RESUME_FILENAME = 'Ishmael-Morgan-Resume-2026.pdf';
 
 const STORY = [
   "Since the moment I could hold a pencil, I've been obsessed with creating.",
@@ -96,6 +100,35 @@ export default function About() {
                 </motion.p>
               ))}
             </div>
+
+            <motion.div
+              {...fadeUpDelay(0.25, 0.7)}
+              className="mt-16 pt-8 border-t border-white/10 max-w-2xl"
+            >
+              <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-brand-red mb-4">
+                [ SYS.FILE // RESUME.PDF ]
+              </p>
+              <div className="flex flex-wrap items-center gap-6">
+                <a
+                  href={RESUME_PATH}
+                  download={RESUME_FILENAME}
+                  className="group inline-flex items-center gap-4 border border-brand-red text-brand-red px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-red hover:text-brand-black transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden w-fit"
+                >
+                  <div className="absolute inset-0 bg-brand-red origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] -z-10" />
+                  <FileDown size={16} className="shrink-0" />
+                  Download Résumé
+                </a>
+
+                <a
+                  href={RESUME_PATH}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors duration-300 underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                >
+                  View in browser
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
