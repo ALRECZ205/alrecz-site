@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     description:
       "The official site of 'ALRECZ'.",
     url: "https://www.alrecz.com",
-    siteName: "ALRECZ",
+    siteName: "ALABAMA RECORDS",
     images: [
       {
         url: "/og-image.jpg",
