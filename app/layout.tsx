@@ -107,11 +107,12 @@ export const metadata: Metadata = {
 },
 
   twitter: {
-    card: "summary_large_image",
-    title: "ALABAMA RECORDS",
-    description: "Official Site",
-    images: ["/og-image.jpg"],
-  },
+  card: "summary_large_image",
+  title: "ALRECZ | Artist • Designer • Creative Director",
+  description:
+    "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
+  images: ["/og-image.jpg"],
+},
 };
 
 export default function RootLayout({
