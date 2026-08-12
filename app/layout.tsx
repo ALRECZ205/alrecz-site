@@ -107,7 +107,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "ALRECZ",
+    title: "ALABAMA RECORDS",
     description: "Official Site",
     images: ["/og-image.jpg"],
   },
