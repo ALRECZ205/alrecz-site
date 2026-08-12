@@ -89,21 +89,22 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "ALRECZ",
-    description:
-      "The official site of 'ALRECZ'.",
-    url: "https://www.alrecz.com",
-    siteName: "ALABAMA RECORDS",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+  title: "ALRECZ | Artist • Designer • Creative Director",
+  description:
+    "Explore the official portfolio of Pelatiah 'ALRECZ' Williams featuring digital art, murals, branding, exhibitions, and creative direction.",
+  url: "https://www.alrecz.com",
+  siteName: "ALRECZ",
+  images: [
+    {
+      url: "/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "ALRECZ Portfolio Preview",
+    },
+  ],
+  locale: "en_US",
+  type: "website",
+},
 
   twitter: {
     card: "summary_large_image",
